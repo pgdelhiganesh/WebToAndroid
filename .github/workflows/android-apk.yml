@@ -18,7 +18,13 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-      
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+        with:
+          # installs the command-line tools + platform-tools
+          packages: tools platform-tools                   # :contentReference[oaicite:0]{index=0}
+          
       - name: Dump repo tree
         run: ls -R .
 
