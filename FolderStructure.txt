@@ -1,0 +1,19 @@
+WebToAndroid/
+├── app/
+│   └── src/
+│       ├── main/
+│       │   ├── java/com/example/webtoandroid/SaveExcelFromBase64Activity.kt
+│       │   └── AndroidManifest.xml
+│       └── build.gradle
+├── build.gradle (Project-level)
+└── settings.gradle
+
+
+Ex: Usage in javascript file
+
+function saveExcelFromBase64(base64, filename) {
+    const encoded = encodeURIComponent(base64);
+    const fname = encodeURIComponent(filename);
+    const intentUrl = `intent://saveExcelFromBase64?filename=${fname}&data=${encoded}#Intent;scheme=webtoandroid;package=com.opsym.webtoandroid;end`;
+    window.location.href = intentUrl;
+}
