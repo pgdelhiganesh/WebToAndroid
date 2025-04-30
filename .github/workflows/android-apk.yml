@@ -20,13 +20,15 @@ jobs:
           distribution: 'temurin'
 
       - name: Grant execute permission to gradlew
-        run: chmod +x ./gradlew
+        run: chmod +x "./WebToAndroid/gradlew"
 
       - name: Build APK with Debug Logging
         run: ./gradlew assembleDebug --debug
+        working-directory: "./WebToAndroid"
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: WebToAndroid-APK
-          path: app/build/outputs/apk/debug/app-debug.apk
+          path: |
+          WebToAndroid/app/build/outputs/apk/debug/app-debug.apk
