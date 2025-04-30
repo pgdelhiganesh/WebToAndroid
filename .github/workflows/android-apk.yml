@@ -18,13 +18,15 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
+      
+      - name: Dump repo tree
+        run: ls -R .
 
       - name: Grant execute permission to gradlew
-        run: chmod +x "./WebToAndroid/gradlew"
+        run: chmod +x ./gradlew
 
       - name: Build APK with Debug Logging
         run: ./gradlew assembleDebug --debug
-        working-directory: "./WebToAndroid"
 
       - name: List debug-apk folder
         run: ls -R WebToAndroid/app/build/outputs/apk/debug
