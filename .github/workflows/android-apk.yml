@@ -26,7 +26,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Build APK with Debug Logging
-        run: ./gradlew assembleDebug --debug
+        run: ./gradlew assembleDebug --info --stacktrace
 
       - name: List debug-apk folder
         run: ls -R app/build/outputs/apk/debug
