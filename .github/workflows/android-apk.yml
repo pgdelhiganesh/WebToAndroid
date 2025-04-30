@@ -29,10 +29,13 @@ jobs:
         run: ./gradlew assembleDebug --debug
 
       - name: List debug-apk folder
-        run: ls -R WebToAndroid/app/build/outputs/apk/debug
+        run: ls -R app/build/outputs/apk/debug
+
+      - name: List generated APK
+        run: ls -l app/build/outputs/apk/debug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: WebToAndroid-APK
-          path: WebToAndroid/app/build/outputs/apk/debug/app-debug.apk
+          path: app/build/outputs/apk/debug/app-debug.apk
